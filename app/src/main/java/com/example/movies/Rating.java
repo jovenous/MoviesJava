@@ -5,20 +5,20 @@ import com.google.gson.annotations.SerializedName;
 public class Rating {
 
     @SerializedName("kp")
-    private String kp;
+    private float ratingKp;
 
-    public Rating(String kp) {
-        this.kp = kp;
+    public Rating(float ratingKp) {
+        this.ratingKp = ratingKp;
     }
 
-    public String getKp() {
-        return kp;
+    public float getRatingKp() {
+        return ratingKp;
     }
 
     @Override
     public String toString() {
         return "Rating{" +
-                "kp='" + kp + '\'' +
+                "ratingKp=" + ratingKp +
                 '}';
     }
 }

@@ -17,7 +17,6 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
     private MainViewModel viewModel;
     private RecyclerView recyclerViewMovies;
     private MoviesAdapter moviesAdapter;
