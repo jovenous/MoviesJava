@@ -3,6 +3,7 @@ package com.example.movies;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -27,11 +28,13 @@ public class MovieDetailActivity extends AppCompatActivity {
 
 
     private MovieDetailViewModel viewModel;
+    private TrailersAdapter trailersAdapter;
 
     private ImageView imageViewPoster;
     private TextView textViewTitle;
     private TextView textViewYear;
     private TextView textViewDescription;
+    private RecyclerView recyclerViewTrailers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +44,9 @@ public class MovieDetailActivity extends AppCompatActivity {
         viewModel = new ViewModelProvider(this).get(MovieDetailViewModel.class);
 
         initViews();
+        trailersAdapter = new TrailersAdapter();
+        recyclerViewTrailers.setAdapter(trailersAdapter);
+
         Movie movie = (Movie) getIntent().getSerializableExtra(EXTRA_MOVIE);
 
         Glide.with(this)
@@ -54,6 +60,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         viewModel.getTrailers().observe(this, new Observer<List<Trailer>>() {
             @Override
             public void onChanged(List<Trailer> trailers) {
+                trailersAdapter.setTrailers(trailers);
                 Log.d(TAG, trailers.toString());
             }
         });
@@ -71,5 +78,6 @@ public class MovieDetailActivity extends AppCompatActivity {
         textViewTitle = findViewById(R.id.textViewTitle);
         textViewYear = findViewById(R.id.textViewYear);
         textViewDescription = findViewById(R.id.textViewDescription);
+        recyclerViewTrailers = findViewById(R.id.recyclerViewTrailers);
     }
 }
