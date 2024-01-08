@@ -13,4 +13,7 @@ public interface ApiService {
 
     @GET("movie/{id}?token=1PFJBDQ-CJH4ZT8-PZGZRN8-E1QP4DD")
     Single<TrailerResponse> loadTrailers(@Path("id") int id);
+
+    @GET("review?token=1PFJBDQ-CJH4ZT8-PZGZRN8-E1QP4DD")
+    Single<ReviewResponse> loadReviews(@Query("movieId") int id);
 }
