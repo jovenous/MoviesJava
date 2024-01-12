@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="4dp"
     android:layout_margin="8dp"
+    app:cardCornerRadius="4dp"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:id="@+id/linearLayoutContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:alpha="0.8"
+        android:orientation="vertical"
         tools:background="@android:color/holo_green_light">
 
         <TextView
@@ -32,7 +32,6 @@
             android:layout_margin="8dp"
             android:textColor="@android:color/white"
             tools:text="Review long text" />
-
 
     </LinearLayout>
 
