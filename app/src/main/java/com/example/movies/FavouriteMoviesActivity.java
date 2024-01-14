@@ -45,7 +45,7 @@ public class FavouriteMoviesActivity extends AppCompatActivity {
         });
     }
 
-    public static Intent newIntent(Context contex) {
-        return new Intent(contex, FavouriteMoviesActivity.class);
+    public static Intent newIntent(Context context) {
+        return new Intent(context, FavouriteMoviesActivity.class);
     }
 }
